@@ -1,0 +1,9 @@
+.tabledata {
+	display: table;
+}
+table tr {
+	display: table-cell;
+}
+table tr td {
+	display: block;
+}
