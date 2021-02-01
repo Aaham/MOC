@@ -34,7 +34,7 @@ const seeddb = async () =>{
     await North.deleteMany({});
     await East.deleteMany({});
     await South.deleteMany({});
-    await East.deleteMany({});
+    await West.deleteMany({});
     
     const north = new North
     const east = new East

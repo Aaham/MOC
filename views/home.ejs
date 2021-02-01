@@ -9,16 +9,75 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/stylesheets/style.css" type = "text/css">
     </head>
     <body>
+        <div class="bg-img"></div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Ministry of Crimson Logic</h1>
-        <h2>North</h2>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Ministry of Crimson Logic Demo</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href = "/north">North</a>
+                    <a class="nav-link" href = "/south">South</a>
+                    <a class="nav-link" href = "/east">East</a>
+                    <a class="nav-link" href = "/west">West</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/home">Home</a>
+                 
+                </div>
+              </div>
+            </div>
+          </nav>
+
+            <div class="container">
+                <h1>Ministry of Crimson Logic</h1>
+                <h3>Demo<h3>
+                    <h6>I am not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Ministry of Crimson Logic, Crimson Logic, Crimson Logic Carribean, any of Crimson Logic holdings, any of its subsidiaries or its affiliates. This project is for canidacy demonstration purposes only and will be removed once selection is concluded. This is a closed application and is not intended for further deployment or use.<h6>
+                <h2>Select an office location</h2>
+                <form class="form" action = "/north">
+                    <div class ="">
+                    <button class="button">North</button>
+                    </div>
+                </form>
+                <form action = '/south'>
+                    <div class ="">
+                    <button class="button">South</button>
+                    </div>
+                </form>
+                <form action = '/east'>
+                    <div class ="">
+                    <button class="button">East</button>
+                    </div>
+                </form>
+                <form action = '/west'>
+                    <div class ="">
+                    <button class="button">West</button>
+                    </div>
+                    </form>
+            </div>
+            
         
+        
+        <script> 
+        $("#login-button").click(function(event){
+            event.preventDefault();
+        
+        $('form').fadeOut(500);
+        $('.wrapper').addClass('form-success');
+   });</script>
         <script src="" async defer></script>
     </body>
 </html>

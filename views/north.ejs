@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Office</title>
+        <title>North Office</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -16,7 +16,30 @@
         <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
-        <h1>Office</h1>
+
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Ministry of Crimson Logic Demo</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link active" href="/north">North</a>
+                <a class="nav-link" href = "/south">South</a>
+                <a class="nav-link" href = "/east">East</a>
+                <a class="nav-link" href = "/west">West</a>
+        
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link" href = "/home">Home</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+        <h1>North Office</h1>
+        <%= messages %> 
         <table>
             <tr>
                 <th>Time Interval</th>
@@ -63,7 +86,7 @@
                 <td>3:45-4:00</td>
             </tr>
             <tr>
-                <% for (let i = 0; i <= 32;i++) {
+                <% for (let i = 1; i <= 32;i++) {
                      if(offices[0].Monday[i]) {%>
                       <td>Available</td>   
                     <% }else { %>
@@ -71,7 +94,7 @@
                     <% }} %>  
              </tr> 
              <tr>
-                <% for (let i = 0; i <= 32;i++) {
+                <% for (let i = 1; i <= 32;i++) {
                      if(offices[0].Tuesday[i]) {%>
                       <td>Available</td>   
                     <% }else { %>
@@ -79,7 +102,7 @@
                     <% }} %>  
              </tr>
              <tr>
-                <% for (let i = 0; i <= 32;i++) {
+                <% for (let i = 1; i <= 32;i++) {
                      if(offices[0].Wednesday[i]) {%>
                       <td>Available</td>   
                     <% }else { %>
@@ -87,7 +110,7 @@
                     <% }} %>  
              </tr>
              <tr>
-                <% for (let i = 0; i <= 32;i++) {
+                <% for (let i = 1; i <= 32;i++) {
                      if(offices[0].Thursday[i]) {%>
                       <td>Available</td>   
                     <% }else { %>
@@ -95,7 +118,7 @@
                     <% }} %>  
              </tr>
              <tr>
-                <% for (let i = 0; i <= 32;i++) {
+                <% for (let i = 1; i <= 32;i++) {
                      if(offices[0].Friday[i]) {%>
                       <td>Available</td>   
                     <% }else { %>
@@ -104,7 +127,7 @@
              </tr> 
         </table>
         
-    <form action="/north" method="POST" class="form-example" id ="appointment">
+    <form action="/north?_method=PUT" method="POST" class="form-example" id ="appointment">
     <div>
         <label class = "form-label" for = "Day">Select a day</label>
         <select class="form-select" id = "Day" aria-label="Default select example" name = "appointment">
@@ -135,18 +158,18 @@
         <option value="12:00">12:00</option>
         <option value="12:15">12:15</option>
         <option value="12:30">12:30</option>
-        <option value="12:40">12:40</option>
+        <option value="12:45">12:45</option>
         <option value="13:00">1:00</option>
-        <option value="13:15">1:10</option>
+        <option value="13:15">1:15</option>
         <option value="13:30">1:30</option>
-        <option value="13:45">1:40"</option>
+        <option value="13:45">1:45"</option>
         <option value="14:00">2:00</option>
         <option value="14:15">2:15</option>
         <option value="14:30">2:30</option>
         <option value="14:45">2:45</option>
         <option value="15:00">3:00</option>
         <option value="15:15">3:15</option>
-        <option value="15:30">3:35</option>
+        <option value="15:30">3:30</option>
         <option value="15:45">3:45</option>
     </select>
     <label class = "form-label" for = "endTime">Chose an end time</label>
@@ -186,24 +209,13 @@
     </select>
 </div>
             <div class = "mb-3">
-                <input type="submit" value="Send Request">
+                <input type="submit" value="Schedule" name="create" class="button">
+            </div>
+            <div class = "mb-3">
+                <input type="submit" value="Delete" name = "delete" class="button">
             </div>
 </form>
-
         
-        
-        
-        
-        
-        
-    <ul>
-        <% for (let office of offices){ 
-            let i = 1                   %>
-            <li><%= office.Monday[i] %> </li>
-                <% console.log(intervals[0]) %>
-            <%i++
-             } %>  
-        </ul>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

@@ -1,9 +1,126 @@
+table{
+	margin-left: auto;
+	margin-right: auto;
+	border-color: rgb(255, 255, 255);
+}
+th{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue;
+	padding:14px;
+	padding-left: 43px;
+	padding-right: 43px;
+	margin-right:20px;
+	
+}
+td{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue;
+	padding-left: 43px;
+	padding-right: 43px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: rgba(0, 0, 0, 0.932);
+	border-top: 1px solid rgba(255, 255, 255, 0.692);
+}
+
+select{
+	margin-right:30px;
+}
+
 .tabledata {
 	display: table;
+	border:1;
+	color:aliceblue
 }
 table tr {
+
 	display: table-cell;
 }
 table tr td {
 	display: block;
+}
+
+.form-example{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.form-label{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue;
+	background-color: rgba(0, 0, 0, 0.897);
+	
+}
+.navbar-brand{
+font-family: 'Playfair Display', serif;
+}
+
+.nav-link{
+font-family: 'Playfair Display', serif;
+padding-left:30px;
+padding-right:30px;
+}
+
+body{
+	background-image: url('https://i.pinimg.com/originals/76/f2/3e/76f23ef08dc1ebabf4589ca0daa1fc14.jpg');
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-position: center;
+}
+
+text{
+	color: aliceblue;
+}
+
+h1{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue;
+}
+
+h2{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue;
+	padding-top:50px;
+	margin-left: auto;
+	text-align: center;
+}
+
+h3{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue
+}
+
+h6{
+	font-family: 'Playfair Display', serif;
+	color:aliceblue
+}
+
+
+.button{
+font-family: 'Playfair Display', serif;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 14px 65px;
+  margin: 30px auto;
+  box-shadow: 0 6px #03706a4f;
+  border-radius: 20px;
+  	
+}
+
+.button:hover {
+	box-shadow: 0 4px #0154577a;
+	top: 2px;
+}
+
+.button:active {
+	box-shadow: 0 0 #02656863;
+	top: 6px;
 }
