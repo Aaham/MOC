@@ -1,11 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const intervals = new Schema({
-    
-})
 
-const OfficeScheema = new Schema({
+const OfficeSchema = new Schema({
     Monday:{
         1:  Boolean, 2: Boolean,  3: Boolean,  4: Boolean,
         5:  Boolean, 6: Boolean,  7: Boolean,  8: Boolean,
@@ -64,4 +61,4 @@ const OfficeScheema = new Schema({
 
 
 
-module.exports = mongoose.model('Office', OfficeScheema);
+module.exports = mongoose.model('southOffice', OfficeSchema);

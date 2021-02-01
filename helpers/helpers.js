@@ -7,45 +7,13 @@ function timeStringToFloat(time) {
     var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
     return (hours + minutes / 60);
   }
-
-  let startTime = (timeStringToFloat("14:15")).toFixed(2)
-  let endTime = (timeStringToFloat("14:45")).toFixed(2)
-  const selectedTime = (startTime+"-"+endTime)
-
-startTime = parseFloat(startTime)
-endTime = parseFloat(endTime)
-
-let startIndex = 1;
-while (rel[startIndex]!=startTime){
-    startIndex+=1
-}
-
-const day = "Monday"
-let j = startIndex;
-for (let i = startTime; i<=endTime; ((i+= .25).toFixed(2)) ){
-    console.log(i)
-    console.log(endTime)
-    if(North.Monday[j]){
-        j++
-    }
-    else{
-        console.log("time selected is unavailable")
-        break;
-        
-    }
-    if(i == endTime){
-        console.log("the time is available")
-    }
-    
-}
-
 function checkAvailable(office,day,startTime, endTime){
     let startTime = (timeStringToFloat(startTime)).toFixed(2)
     let endTime = (timeStringToFloat(endTime)).toFixed(2)
     startTime = parseFloat(startTime)
     endTime = parseFloat(endTime)
 
-    //if start time is 8:00 this will not increment
+    //if start time is 8:00 this does not need to increment. Determines what range of intervals to look over
     let startIndex = 1;
     while (relationObj[startIndex]!=startTime){
     startIndex+=1
@@ -66,5 +34,10 @@ function checkAvailable(office,day,startTime, endTime){
         }
         
     }
+
 }
+}
+
+function setAppointment(office,day,startTime, endTime){
+    
 }

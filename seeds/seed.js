@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-const Office = require('../models/office')
+const North = require('../models/north')
+const South =  require('../models/south')
+const East = require('../models/east')
+const West = require('../models/west')
 
 mongoose.connect('mongodb://localhost:27017/Appointments', {
     useNewUrlParser: true,
@@ -28,17 +31,45 @@ const seedDB = async (day) => {
 }
 
 const seeddb = async () =>{
-    await Office.deleteMany({});
-    const North = new Office
-    seedDB(North.Monday)
-    seedDB(North.Tuesday)
-    seedDB(North.Wednesday)
-    seedDB(North.Thursday)
-    seedDB(North.Friday)  
-    await North.save();  
+    await North.deleteMany({});
+    await East.deleteMany({});
+    await South.deleteMany({});
+    await East.deleteMany({});
+    
+    const north = new North
+    const east = new East
+    const south = new South
+    const west = new West
+    
+    seedDB(north.Monday)
+    seedDB(north.Tuesday)
+    seedDB(north.Wednesday)
+    seedDB(north.Thursday)
+    seedDB(north.Friday) 
+    await north.save(); 
+    
+    seedDB(east.Monday)
+    seedDB(east.Tuesday)
+    seedDB(east.Wednesday)
+    seedDB(east.Thursday)
+    seedDB(east.Friday)  
+    await east.save(); 
+
+    seedDB(south.Monday)
+    seedDB(south.Tuesday)
+    seedDB(south.Wednesday)
+    seedDB(south.Thursday)
+    seedDB(south.Friday)  
+    await south.save(); 
+
+      
+    seedDB(west.Monday)
+    seedDB(west.Tuesday)
+    seedDB(west.Wednesday)
+    seedDB(west.Thursday)
+    seedDB(west.Friday)  
+    await west.save();  
 }
-
-
 seeddb().then(() => {
     mongoose.connection.close();
 })
