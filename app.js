@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -10,10 +14,11 @@ const East = require('./models/east')
 const West = require('./models/west')
 const intervals = require('./helpers/intervals.js');
 const relationObj = require('./helpers/relationObj.js');
+const dbUrl = process.env.DB_URL
 
+//mongodb://localhost:27017/Appointments
 
-
-mongoose.connect('mongodb://localhost:27017/Appointments', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
